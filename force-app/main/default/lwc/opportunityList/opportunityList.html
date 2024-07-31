@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Opportunities">
+        <lightning-datatable
+            key-field="id"
+            data={opportunities}
+            columns={columns}
+            onrowaction={handleRowAction}>
+        </lightning-datatable>
+        
+        <c-opportunity-details 
+            if:true={selectedOpportunityId} 
+            opportunity-id={selectedOpportunityId}
+            onopportunityupdated={handleOpportunityUpdated}>
+        </c-opportunity-details>
+        
+        <c-opportunity-actions 
+            if:true={selectedOpportunityId} 
+            opportunity-id={selectedOpportunityId}
+            onsiblingnotification={handleSiblingNotification}>
+        </c-opportunity-actions>
+    </lightning-card>
+</template>

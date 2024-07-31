@@ -1,0 +1,47 @@
+<template>
+  <div class="insurance-flow">
+      <template if:true={isStep1}>
+          <h2>Step 1: Select Insurance Type</h2>
+          <lightning-combobox
+              label="Select Type of Insurance"
+              value={selectedInsuranceType}
+              onchange={handleInsuranceTypeChange}
+              options={insuranceOptions}
+          ></lightning-combobox>
+          <lightning-button label="Next" onclick={handleNextClick} ></lightning-button>
+      </template>
+
+      <template if:true={isStep2CarInsurance}>
+          <h2>Step 2: Car Insurance Details</h2>
+          <lightning-combobox
+              label="Select Make"
+              value={selectedMake}
+              onchange={handleMakeChange}
+              options={carMakeOptions}
+          ></lightning-combobox>
+          <lightning-combobox
+              label="Select Model"
+              value={selectedModel}
+              onchange={handleModelChange}
+              options={carModelOptions}
+             
+          ></lightning-combobox>
+          <lightning-button label="Next" onclick={handleNextClick} ></lightning-button>
+      </template>
+
+      <template if:true={isStep2TwoWheelerInsurance}>
+          <h2>Step 2: Two Wheeler Insurance Details</h2>
+          <lightning-input label="Enter Two Wheeler Name" value={twoWheelerName} onchange={handleTwoWheelerNameChange}></lightning-input>
+          <lightning-button label="Next" onclick={handleNextClick}></lightning-button>
+      </template>
+
+      <!-- <template if:true={isStepGreaterThan1}>
+          <ul class="timeline">
+              <li class={step = 1 ? 'is-active' : ''}>Select Insurance</li>
+              <li class={step = 2 ? 'is-active' : ''}>Details</li>
+          </ul>
+      </template> -->
+  </div>
+
+  
+</template>

@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Search Account Type Rating">
+        <lightning-input  label="Account Type" value={accountType} onchange={accountTypeHandler} placeholder="Enter Account Type"></lightning-input>
+        <lightning-input  label="Account Rating" value={accountRating} onchange={accountRatingHandler} placeholder="Enter Account Rating"></lightning-input>
+        <lightning-button label="Fetch Accounts" onclick={fetchAccounts}></lightning-button>
+               
+        <lightning-datatable 
+            key-field="Id"
+            data={accList}
+            columns={columns} 
+        >
+
+        </lightning-datatable>
+
+    </lightning-card>
+</template>

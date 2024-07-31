@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="Account Data">
+        <div class="slds-p-around_medium">
+            <lightning-input 
+                label="Account Type" 
+                value={accountType} 
+                onchange={handleInputChange} 
+                placeholder="Enter Account Type">
+            </lightning-input>
+            <lightning-button 
+                label="Fetch Accounts" 
+                onclick={fetchAccounts} 
+                class="slds-m-top_medium">
+            </lightning-button>
+        </div>
+
+        <template if:true={accounts}>
+            <lightning-datatable
+                key-field="id"
+                data={accounts}
+                columns={columns}>
+            </lightning-datatable>
+        </template>
+
+        <template if:true={error}>
+            <p class="slds-text-color_error">{error}</p>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Weather Information Of City">
+        <div class="slds-p-around_medium">
+            <lightning-input label="Enter City Name" value={cityName} onchange={handleCityChange}></lightning-input>
+            <lightning-button label="Weather Data" onclick={getWeatherInfo} class="slds-m-top_small"></lightning-button>
+        </div>
+        <template if:true={weatherData}>
+            <div class="slds-m-top_medium">
+                <p>Temperature: <span style="color:orange">{weatherData.current.temp_c}</span> °C</p>
+                <p>Feels Like: <span style="color:orange">{weatherData.current.feelslike_c}</span> °C</p>
+                <p>Humidity Like: <span style="color:orange">{weatherData.current.humidity}</span> g/m<sup>3</sup></p>
+            </div>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,40 @@
+<template>
+    <lightning-card title="Customers Loan">
+        <div class="slds-p-horizontal_small">
+            <lightning-input label="Enter Case Number" value={caseNumber} onchange={handleCaseNumberChange}></lightning-input>
+            <lightning-button label="Search Cases" onclick={handleSearchCases}></lightning-button><br/>
+
+            <lightning-record-edit-form object-api-name="Case" record-id={caseNumber}>
+                <lightning-input-field field-name="Status" onchange={caseStatusHandler}></lightning-input-field>
+            </lightning-record-edit-form> 
+
+            <template if:true={showSpinnerFlag}>
+                <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+            </template>
+        </div>
+        Total Records Found = {totalRecords}
+
+        <lightning-card title="Related Cases">
+            <template if:true={currentPageData.length}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={currentPageData}
+                    columns={columns}
+                    draft-values={draftValues}>
+                </lightning-datatable>
+
+                <!-- Pagination Controls -->
+                <div class="slds-m-top_medium">
+                    <p>{currentPage} Page / {totalPages} Pages</p>
+                    <lightning-button label="First Page" onclick={handleFirstPage} disabled={disableFirst}></lightning-button>
+                    <lightning-button label="Previous Page" onclick={handlePreviousPage} disabled={disablePrevious}></lightning-button>
+                    <lightning-button label="Next Page" onclick={handleNextPage} disabled={disableNext}></lightning-button>
+                    <lightning-button label="Last Page" onclick={handleLastPage} disabled={disableLast}></lightning-button>
+                </div>
+            </template>
+            <template if:false={currentPageData.length}>
+                <p>No related cases found.</p>
+            </template>
+        </lightning-card>
+    </lightning-card>
+</template>

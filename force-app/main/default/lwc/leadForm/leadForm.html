@@ -1,0 +1,44 @@
+<template>
+    <lightning-card title="Create Lead 2.0">
+        <div class="slds-m-around_medium">
+            <lightning-input label="First Name" value={firstName} onchange={handleInputChange} data-id="firstName"></lightning-input>
+            <lightning-input label="Last Name" value={lastName} onchange={handleInputChange} data-id="lastName"></lightning-input>
+            <lightning-input label="Company Name" value={company} onchange={handleInputChange} data-id="company"></lightning-input>
+            
+            <lightning-combobox
+                label="Status"
+                value={status}
+                placeholder="Select Status"
+                options={statusOptions}
+                onchange={handleInputChange}
+                data-id="status">
+            </lightning-combobox>
+            
+            <template if:true={showIndustryPicklist}>
+                <lightning-combobox
+                    label="Industry"
+                    value={industry}
+                    disabled={disableIndustry}
+                    placeholder="Select Industry"
+                    options={industryOptions}
+                    onchange={handleInputChange}
+                    data-id="industry">
+                </lightning-combobox>
+            </template>
+            
+            <template if:true={showLeadSource}>
+                <lightning-combobox
+                    label="Lead Source"
+                    value={leadSource}
+                    placeholder="Select Lead Source"
+                    options={leadSourceOptions}
+                    onchange={handleInputChange}
+                    disabled={disableLeadSource}
+                    data-id="leadSource">
+                </lightning-combobox>
+            </template>
+            
+            <lightning-button label="Create Lead" onclick={handleCreateLead} class="slds-m-top_medium"></lightning-button>
+        </div>
+    </lightning-card>
+</template>

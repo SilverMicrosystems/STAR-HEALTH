@@ -1,0 +1,17 @@
+<template>
+    
+
+    <lightning-card  title="Child">
+     
+     <lightning-record-edit-form object-api-name="Account">
+        <lightning-input-field field-name="Name" onchange={nameHandler}></lightning-input-field> <br/>
+        <lightning-button variant="success" icon-name="utility:send" label="Send to Parent" onclick={sendDataHandler}></lightning-button>
+        You Typed Acc Name = {objAcc.Name}
+
+     </lightning-record-edit-form>   
+    
+
+    </lightning-card>
+
+
+</template>

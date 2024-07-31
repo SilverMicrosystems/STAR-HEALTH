@@ -1,0 +1,7 @@
+<template>
+    <lightning-card title="Opportunity Details">
+        <lightning-input label="Opportunity Name" value={opportunity.Name} ></lightning-input>
+        <lightning-input label="Amount" value={opportunity.Amount} onchange={handleInputChange}></lightning-input>
+        <lightning-button label="Save" onclick={handleSave}></lightning-button>
+    </lightning-card>
+</template>

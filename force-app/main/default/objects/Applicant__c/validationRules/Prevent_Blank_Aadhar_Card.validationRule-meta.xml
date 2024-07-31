@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Blank_Aadhar_Card</fullName>
+    <active>false</active>
+    <errorConditionFormula>ISBLANK( Aadhar_Card__c ) &amp;&amp;  $Profile.Name = &apos;Customer Care&apos;</errorConditionFormula>
+    <errorDisplayField>Aadhar_Card__c</errorDisplayField>
+    <errorMessage>Aadhar Card should not be empty for customer care users.</errorMessage>
+</ValidationRule>

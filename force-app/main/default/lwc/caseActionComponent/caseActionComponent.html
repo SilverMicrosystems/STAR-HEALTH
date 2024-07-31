@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Case Details">
+        <div class="slds-var-m-around_medium">
+            <!-- Escalate Case Button (visible only when Case status is Working) -->
+            <template if:true={isEscalateVisible}>
+                <lightning-button label="Escalate Case" onclick={handleEscalate} class="slds-m-bottom_medium"></lightning-button>
+            </template>
+            
+            <!-- Description Text textarea (visible only when Case status is Working) -->
+            <template if:true={isDescriptionVisible}>
+                <div class="slds-m-top_medium">
+                    <lightning-textarea label="Description Text" value={description} onchange={handleDescriptionChange}></lightning-textarea>
+                </div>
+            </template>
+            
+            <!-- Reopen Case Button (visible only when Case status is Escalated) -->
+            <template if:true={isReopenVisible}>
+                <lightning-button label="Reopen Case" onclick={handleReopen} class="slds-m-top_medium"></lightning-button>
+            </template>
+        </div>
+    </lightning-card>
+</template>

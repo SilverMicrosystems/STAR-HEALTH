@@ -1,0 +1,21 @@
+<!-- consumerDurableLoan.html -->
+<template>
+    <lightning-card title="Related Cases">
+        <template if:true={cases}>
+           
+            <lightning-datatable
+            key-field="Id"
+            data={cases}
+            columns={columns}    
+            draft-values={draftValues} 
+            > 
+</lightning-datatable>
+
+
+         
+        </template>
+        <template if:false={cases}>
+            <p>No related cases found.</p>
+        </template>
+    </lightning-card>
+</template>

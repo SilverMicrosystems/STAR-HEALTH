@@ -1,0 +1,17 @@
+<template>
+    <div class="slds-box slds-theme_default">
+        <lightning-icon icon-name="standard:opportunity" alternative-text="Opportunity" size="large"></lightning-icon>
+        <div class="tab-container">
+            <button class={operationsTabClass} onclick={showOperations}>Operations</button>
+            <button class={closeDealsTabClass} onclick={showCloseDeals}>Close Deals</button>
+        </div>
+        <template if:true={isOperations}>
+            <div class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick={closeModal}>&times;</span>
+                    <p>Operations Content Here...</p>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

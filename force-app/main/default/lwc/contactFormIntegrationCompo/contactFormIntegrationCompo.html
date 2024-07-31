@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Create Contact Form Integration">
+        <lightning-record-edit-form object-api-name={objectContact}>
+            <lightning-input-field field-name={firstName} onchange={firstNameHandler}></lightning-input-field>
+            <lightning-input-field field-name={lastName} onchange={lastNameHandler}></lightning-input-field>
+            <lightning-input-field field-name={email} onchange={emailHandler}></lightning-input-field>
+            <lightning-button variant="brand" icon-name="utility:send" label="Verify" onclick={emailVerificationHandler}></lightning-button>
+
+            <template lwc:if={validFlag}>
+                <lightning-icon icon-name="action:approval" alternative-text="Approved" title="Approved"></lightning-icon>
+            </template>
+        
+            <template lwc:else>
+              <lightning-icon icon-name="action:close" alternative-text="Not Approved" title="Not Approved"></lightning-icon>
+        </template>
+
+        </lightning-record-edit-form>
+    </lightning-card>
+</template>

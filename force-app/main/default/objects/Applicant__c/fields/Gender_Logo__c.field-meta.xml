@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gender_Logo__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE( Gender__c , &apos;Male&apos;, IMAGE(&apos;https://starhealthinsurance61-dev-ed.develop.file.force.com/servlet/servlet.ImageServer?id=0155h000001aDIZ&amp;oid=00D5h0000094Kc3&amp;lastMod=1703042045000&apos;, &apos;Male Logo&apos;,30,30 
+)
+, &apos;Female&apos;, IMAGE(&apos;https://starhealthinsurance61-dev-ed.develop.file.force.com/servlet/servlet.ImageServer?id=0155h000001aDIe&amp;oid=00D5h0000094Kc3&amp;lastMod=1703042093000&apos;,&apos;Female Logo&apos;,30,30 
+)
+, &apos;Transgender&apos; , IMAGE(&apos;https://starhealthinsurance61-dev-ed.develop.file.force.com/servlet/servlet.ImageServer?id=0155h000001aDIj&amp;oid=00D5h0000094Kc3&amp;lastMod=1703042130000&apos;,&apos;Transgender  Logo&apos;,30,30 
+)
+,
+
+ &apos; &apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Gender Logo</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
